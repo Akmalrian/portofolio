@@ -5,7 +5,7 @@ import ScrollReveal from "../components/ui/ScrollReveal";
 import GitHubIcon from "../components/ui/GitHubIcon";
 import LinkedInIcon from "../components/ui/LinkedInIcon";
 
-const INPUT_CLASS = "w-full bg-blue-50/80 border border-blue-200 focus:border-blue-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-blue-900 placeholder-blue-300 text-sm transition-all duration-200";
+const INPUT_CLASS = "w-full bg-white border border-blue-200 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-slate-800 placeholder-slate-400 text-sm transition-all duration-200 shadow-sm";
 
 function SocialLink({ href, icon, label, handle, iconBg }) {
   return (
@@ -14,10 +14,10 @@ function SocialLink({ href, icon, label, handle, iconBg }) {
         {icon}
       </div>
       <div>
-        <div className="text-sm font-semibold text-blue-900 group-hover:text-blue-600 transition-colors duration-200">{label}</div>
-        <div className="text-xs text-blue-400">{handle}</div>
+        <div className="text-sm font-semibold text-slate-800 group-hover:text-blue-700 transition-colors duration-200">{label}</div>
+        <div className="text-xs text-slate-400">{handle}</div>
       </div>
-      <div className="ml-auto text-blue-200 group-hover:text-blue-500 transition-colors duration-200">
+      <div className="ml-auto text-slate-300 group-hover:text-blue-500 transition-colors duration-200">
         <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
         </svg>
@@ -42,16 +42,16 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 px-6 relative overflow-hidden bg-gradient-to-b from-white to-blue-50">
-      <div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-64 h-64 bg-blue-100 rounded-full filter blur-3xl pointer-events-none opacity-60" />
+    <section id="contact" className="py-32 px-6 relative overflow-hidden" style={{ background: "linear-gradient(180deg, #DBEAFE 0%, #BFDBFE 100%)" }}>
+      <div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-64 h-64 bg-blue-300 rounded-full filter blur-3xl pointer-events-none opacity-20" />
 
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <SectionLabel>Contact</SectionLabel>
-          <h2 className="font-display text-4xl md:text-5xl font-extrabold text-blue-900 mt-4 mb-4">
+          <h2 className="font-display text-4xl md:text-5xl font-extrabold text-slate-800 mt-4 mb-4">
             Mari berkolaborasi
           </h2>
-          <p className="text-blue-500/80 text-base mb-16 max-w-md">
+          <p className="text-slate-600 text-base mb-16 max-w-md">
             Terbuka untuk freelance, kolaborasi projek, atau sekadar obrolan tentang teknologi.
           </p>
         </ScrollReveal>
@@ -61,19 +61,19 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-blue-500 text-xs font-semibold uppercase tracking-widest mb-2">Nama</label>
+                  <label className="block text-slate-600 text-xs font-semibold uppercase tracking-widest mb-2">Nama</label>
                   <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Nama kamu" className={INPUT_CLASS} required />
                 </div>
                 <div>
-                  <label className="block text-blue-500 text-xs font-semibold uppercase tracking-widest mb-2">Email</label>
+                  <label className="block text-slate-600 text-xs font-semibold uppercase tracking-widest mb-2">Email</label>
                   <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="email@contoh.com" className={INPUT_CLASS} required />
                 </div>
               </div>
               <div>
-                <label className="block text-blue-500 text-xs font-semibold uppercase tracking-widest mb-2">Pesan</label>
+                <label className="block text-slate-600 text-xs font-semibold uppercase tracking-widest mb-2">Pesan</label>
                 <textarea name="message" value={form.message} onChange={handleChange} placeholder="Ceritakan projek atau ide kamu..." rows={6} className={`${INPUT_CLASS} resize-none`} required />
               </div>
-              <button type="submit" className="w-full btn-glow bg-blue-600 hover:bg-blue-500 text-white font-display font-semibold py-4 rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-blue-400/30 hover:-translate-y-0.5 tracking-wide text-sm">
+              <button type="submit" className="w-full btn-glow bg-blue-700 hover:bg-blue-600 text-white font-display font-semibold py-4 rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-0.5 tracking-wide text-sm">
                 {submitted
                   ? <span className="flex items-center justify-center gap-2">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,15 +84,15 @@ export default function Contact() {
                   : "Kirim Pesan →"
                 }
               </button>
-              <p className="text-blue-400 text-xs text-center">
-                Atau langsung email ke <span className="text-blue-600 font-medium">{CONFIG.email}</span>
+              <p className="text-slate-500 text-xs text-center">
+                Atau langsung email ke <span className="text-blue-700 font-medium">{CONFIG.email}</span>
               </p>
             </form>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
             <div className="flex flex-col gap-4">
-              <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl p-7 mb-2 shadow-xl shadow-blue-300/30">
+              <div className="bg-gradient-to-br from-blue-700 to-blue-500 rounded-2xl p-7 mb-2 shadow-xl shadow-blue-400/30">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-2 h-2 bg-emerald-300 rounded-full animate-pulse" />
                   <span className="text-emerald-200 text-xs font-semibold tracking-wide uppercase">Open to work</span>
@@ -101,7 +101,7 @@ export default function Contact() {
                   Saat ini saya aktif mencari peluang sebagai <span className="text-white font-semibold">Full-Stack Developer</span>. Response time biasanya <span className="text-white font-semibold">kurang dari 24 jam</span> di hari kerja.
                 </p>
               </div>
-              <SocialLink href={CONFIG.github} icon={<GitHubIcon size={17} />} label="GitHub" handle="@Akmalrian" iconBg="bg-blue-50 text-blue-600" />
+              <SocialLink href={CONFIG.github} icon={<GitHubIcon size={17} />} label="GitHub" handle="@Akmalrian" iconBg="bg-slate-100 text-slate-600" />
               <SocialLink href={CONFIG.linkedin} icon={<LinkedInIcon size={17} />} label="LinkedIn" handle="Akmal Oktarian" iconBg="bg-blue-100 text-blue-600" />
             </div>
           </ScrollReveal>
