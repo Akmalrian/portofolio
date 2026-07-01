@@ -21,7 +21,7 @@ export default function About() {
                 
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
                   <div className="w-40 h-40 rounded-2xl bg-gradient-to-br flex items-center justify-center shadow-xl shadow-blue-300/50">
-                    <img src="/public/IMG_20260622_101335.png" alt="my photo" />
+                    <img src="/IMG_20260622_101335.png" alt="my photo" />
                   </div>
                   <div className="text-center">
                     <p className="text-slate-800 font-display font-bold text-lg">{CONFIG.name}</p>
